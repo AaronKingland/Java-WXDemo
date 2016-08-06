@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+
+	<package name="WXPay" extends="json-default" namespace="/">
+
+
+		<action name="WXPayBack" class="com.wxpay.action.WXPayAction"
+			method="wXPayBack">
+			<result name="success">/paysuccess.jsp</result>
+			<result name="fail" type="json"></result>
+		</action>
+
+		<action name="Dopay" class="com.wx.component.TopayAction" method="dopay">
+			<result name="success">/wxpay.jsp</result>
+			<result name="fail" type="json"></result>
+		</action>
+	</package>
+
+</struts>    
